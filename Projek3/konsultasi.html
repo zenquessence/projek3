@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Konsultasi - Universitas Jaya</title>
+  <style>
+    body { 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      margin: 0; 
+      padding: 0; 
+      background: linear-gradient(135deg, #f5f3f0 0%, #ebe8e4 100%);
+      line-height: 1.6;
+    }
+    header { 
+      background: linear-gradient(135deg, #8b4513 0%, #a0522d 50%, #8b4513 100%);
+      color: white; 
+      padding: 25px; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
+    }
+    .logo-slot {
+      position: absolute;
+      left: 50px;
+      width: 80px;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      text-align: center;
+      border-radius: 12px;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+    .header-content {
+      text-align: center;
+    }
+    .header-content a {
+      color: #fff;
+      text-decoration: none;
+      background: rgba(255,255,255,0.2);
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    .header-content a:hover {
+      background: rgba(255,255,255,0.3);
+      transform: translateY(-2px);
+    }
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(139, 69, 19, 0.1);
+      border: 1px solid rgba(139, 69, 19, 0.1);
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin: 25px 0;
+    }
+    .service-card {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(139, 69, 19, 0.1);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(139, 69, 19, 0.08);
+      transition: all 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(139, 69, 19, 0.15);
+    }
+    .service-card h3 {
+      color: #8b4513;
+      margin-top: 0;
+      font-weight: 600;
+    }
+    .form-container {
+      background: linear-gradient(135deg, #f5f3f0 0%, #ebe8e4 100%);
+      padding: 25px;
+      border-radius: 12px;
+      margin: 25px 0;
+      border: 1px solid rgba(139, 69, 19, 0.1);
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #5d4e37;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid rgba(139, 69, 19, 0.1);
+      border-radius: 8px;
+      font-size: 14px;
+      box-sizing: border-box;
+      background: rgba(255, 255, 255, 0.8);
+      transition: border-color 0.3s ease;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: #8b4513;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+    }
+    .form-group textarea {
+      height: 100px;
+      resize: vertical;
+    }
+    .btn-submit {
+      background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+      color: white;
+      padding: 15px 35px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
+    }
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+    }
+    .contact-info {
+      background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+      padding: 25px;
+      border-radius: 12px;
+      margin: 25px 0;
+      border: 1px solid rgba(139, 69, 19, 0.1);
+    }
+    .contact-info h3 {
+      color: #8b4513;
+      margin-top: 0;
+      font-weight: 600;
+    }
+    .schedule {
+      background: linear-gradient(135deg, #fff8dc 0%, #fffacd 100%);
+      padding: 25px;
+      border-radius: 12px;
+      margin: 25px 0;
+      border-left: 5px solid #d2b48c;
+      border: 1px solid rgba(139, 69, 19, 0.1);
+    }
+    .schedule h3 {
+      color: #8b4513;
+      font-weight: 600;
+    }
+    footer { 
+      background: linear-gradient(135deg, #2c1810 0%, #3d2914 100%);
+      color: #d2b48c; 
+      text-align: center; 
+      padding: 25px; 
+      margin-top: 40px; 
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-slot">
+      <img src="images/stack-up-slogan.png" alt="Logo Universitas Jaya" style="width: 100%; height: 100%; object-fit: contain;">
+    </div>
+    <div class="header-content">
+      <h1>Konsultasi Akademik</h1>
+      <a href="index.html">Home</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <h2>Layanan Konsultasi Akademik Universitas Jaya</h2>
+    <p>Universitas Jaya menyediakan berbagai layanan konsultasi akademik untuk membantu mahasiswa dalam mengembangkan potensi dan menyelesaikan berbagai permasalahan akademik. Tim konsultan kami siap membantu Anda dengan pengalaman dan keahlian yang profesional.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>🎓 Konsultasi Akademik</h3>
+        <p>Bimbingan terkait kurikulum, pemilihan mata kuliah, dan strategi pembelajaran yang efektif.</p>
+      </div>
+      <div class="service-card">
+        <h3>💼 Konsultasi Karir</h3>
+        <p>Panduan pengembangan karir, persiapan dunia kerja, dan networking dengan industri.</p>
+      </div>
+      <div class="service-card">
+        <h3>🧠 Konsultasi Psikologi</h3>
+        <p>Dukungan mental dan emosional untuk mengatasi stres akademik dan personal.</p>
+      </div>
+      <div class="service-card">
+        <h3>💰 Konsultasi Beasiswa</h3>
+        <p>Informasi dan panduan untuk mendapatkan berbagai program beasiswa dan bantuan finansial.</p>
+      </div>
+      <div class="service-card">
+        <h3>🔬 Konsultasi Riset</h3>
+        <p>Bimbingan penelitian, metodologi, dan publikasi karya ilmiah.</p>
+      </div>
+      <div class="service-card">
+        <h3>🌍 Konsultasi Pertukaran</h3>
+        <p>Informasi program pertukaran pelajar dan studi di luar negeri.</p>
+      </div>
+    </div>
+
+    <div class="schedule">
+      <h3>📅 Jadwal Konsultasi</h3>
+      <p><strong>Senin - Jumat:</strong> 08.00 - 16.00 WIB</p>
+      <p><strong>Sabtu:</strong> 08.00 - 12.00 WIB</p>
+      <p><strong>Minggu:</strong> Tutup</p>
+      <p><em>Konsultasi dapat dilakukan secara online atau tatap muka dengan reservasi sebelumnya.</em></p>
+    </div>
+
+    <div class="form-container">
+      <h3>📝 Form Konsultasi Online</h3>
+      <p>Silakan isi form di bawah ini untuk mengajukan konsultasi:</p>
+      
+      <form>
+        <div class="form-group">
+          <label for="nama">Nama Lengkap *</label>
+          <input type="text" id="nama" name="nama" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="nim">NIM *</label>
+          <input type="text" id="nim" name="nim" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email">
+        </div>
+        
+        <div class="form-group">
+          <label for="phone">Nomor Telepon</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        
+        <div class="form-group">
+          <label for="fakultas">Fakultas</label>
+          <select id="fakultas" name="fakultas">
+            <option value="">Pilih Fakultas</option>
+            <option value="teknologi">Teknologi dan Informatika</option>
+            <option value="ekonomi">Ekonomi dan Bisnis</option>
+            <option value="sains">Sains dan Teknik</option>
+            <option value="sosial">Ilmu Sosial dan Humaniora</option>
+            <option value="desain">Desain dan Kreativitas</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="jenis">Jenis Konsultasi</label>
+          <select id="jenis" name="jenis">
+            <option value="">Pilih Jenis Konsultasi</option>
+            <option value="akademik">Konsultasi Akademik</option>
+            <option value="karir">Konsultasi Karir</option>
+            <option value="psikologi">Konsultasi Psikologi</option>
+            <option value="beasiswa">Konsultasi Beasiswa</option>
+            <option value="riset">Konsultasi Riset</option>
+            <option value="pertukaran">Konsultasi Pertukaran</option>
+            <option value="lainnya">Lainnya</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="pertanyaan">Pertanyaan/Deskripsi Masalah *</label>
+          <textarea id="pertanyaan" name="pertanyaan" placeholder="Jelaskan secara detail pertanyaan atau masalah yang ingin dikonsultasikan..." required></textarea>
+        </div>
+        
+        <button type="submit" class="btn-submit">Kirim Permohonan Konsultasi</button>
+      </form>
+    </div>
+
+    <div class="contact-info">
+      <h3>📞 Informasi Kontak</h3>
+      <p><strong>Unit Konsultasi Akademik Universitas Jaya</strong></p>
+      <p>📧 Email: konsultasi@universitasjaya.ac.id</p>
+      <p>📱 WhatsApp: +62 812-3456-7890</p>
+      <p>🏢 Alamat: Gedung Pusat Layanan Mahasiswa, Lantai 2<br>
+         Jl. Pendidikan No. 123, Jakarta Selatan 12345</p>
+      <p>⏰ Jam Operasional: Senin - Jumat 08.00 - 16.00 WIB</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>Identitas: A12.2024.07263 - Zain Adnan Hanif</p>
+  </footer>
+</body>
+</html>
